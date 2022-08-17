@@ -1,19 +1,26 @@
-
 //Create a function groupById(arr) that creates an object from it, with id as the key, and array items as values.
 //1
 
 let users = [
-  {id: 'john', name: "John Smith", age: 20},
-  {id: 'ann', name: "Ann Smith", age: 24},
-  {id: 'pete', name: "Pete Peterson", age: 31},
+  { id: "john", name: "John Smith", age: 20 },
+  { id: "ann", name: "Ann Smith", age: 24 },
+  { id: "pete", name: "Pete Peterson", age: 31 },
 ];
 
 function groupById(array) {
   //write your code here
+  const newReduceArray = array.reduce((accum, item, i) => {
+    const id = item.id;
+    console.log(id);
+
+    accum[item.id] = item;
+    return accum;
+  }, {});
+  console.log(newReduceArray);
 }
 
-let usersById= groupById(users)
-console.log(usersById)
+let usersById = groupById(users);
+// console.log(usersById)
 
 /* expected output: 
 
@@ -24,3 +31,4 @@ console.log(usersById)
 }
   
 */
+
